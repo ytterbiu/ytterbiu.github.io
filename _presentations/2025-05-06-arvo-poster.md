@@ -9,5 +9,7 @@ venue: "ARVO Annual Meeting"
 location: "Salt Lake City, UT, USA"
 # slides: /assets/pdf/arvo-2025-poster.pdf # optional
 # video: https://youtu.be/xxxx # optional
-website: https://iovs.arvojournals.org/article.aspx?articleid=2806499 # optional
+abstract_url: https://iovs.arvojournals.org/article.aspx?articleid=2806499
+abstract_label: Abstract
+website: https://www.arvo.org/annual-meeting # optional
 ---

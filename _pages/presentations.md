@@ -1,6 +1,6 @@
 ---
 layout: page
-title: presentations
+title: Presentations
 permalink: /presentations/
 description: Talks, posters, invited lectures, and workshops.
 nav: true
@@ -17,11 +17,22 @@ nav_order: 5
       {{ p.type | capitalize }} · {{ p.venue }} · {{ p.location }} · {{ p.date | date: "%b %Y" }}
     </div>
     <div>
-      {% if p.slides %}<a href="{{ p.slides | relative_url }}">Slides/PDF</a>{% endif %}
-      {% if p.video %}{% if p.slides %} · {% endif %}<a href="{{ p.video }}">Video</a>{% endif %}
-      {% if p.website %}{% if p.slides or p.video %} · {% endif %}<a href="{{ p.website }}">Event page</a>{% endif %}
-      {% if p.url %}{% if p.slides or p.video or p.website %} · {% endif %}<a href="{{ p.url | relative_url }}">Details</a>{% endif %}
-    </div>
+  {% assign sep = "" %}
+
+{% if p.slides %} <a href="{{ p.slides | relative_url }}">Slides/PDF</a>
+{% assign sep = " · " %} {% endif %}
+
+{% if p.video %} {{ sep }}<a href="{{ p.video }}">Video</a>
+{% assign sep = " · " %} {% endif %}
+
+{% if p.website %} {{ sep }}<a href="{{ p.website }}">Event page</a>
+{% assign sep = " · " %} {% endif %}
+
+{% if p.abstract_url %}
+{{ sep }}<a href="{% if p.abstract_url contains '://' %}{{ p.abstract_url }}{% else %}{{ p.abstract_url | relative_url }}{% endif %}">
+{{ p.abstract_label | default: "Abstract" }} </a> {% endif %}
+
+</div>
   </li>
 {% endfor %}
 </ul>
