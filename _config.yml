@@ -173,6 +173,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  presentations:
+    output: false
+    permalink: /presentations/:path/
 
 news:
   enabled: true

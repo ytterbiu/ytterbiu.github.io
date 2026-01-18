@@ -4,7 +4,7 @@ permalink: /teaching/
 title: Teaching
 description: This contains materials for courses I have taught.
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 For now, this page is assumed to be a static description of your courses. You
